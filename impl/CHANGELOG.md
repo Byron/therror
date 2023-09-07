@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## 0.0.48 (2023-09-07)
 
 <csr-id-5ae5b4e60e3f764615d89dca9e45db10be732f37/>
 
@@ -33,7 +33,7 @@ Thanks to `dtolnay` for providing such a good base for further development.
 <details><summary>view details</summary>
 
  * **Uncategorized**
-    - Add changelogs prior to release ([`082e6c6`](https://github.com/Byron/theerror/commit/082e6c618b2b318d42c1e71fca30ec130ba202f1))
+    - Add changelogs prior to release ([`dc9b3d6`](https://github.com/Byron/theerror/commit/dc9b3d669f4b5acfecffc2654afa0c0da689317c))
     - Rename `thiserror` to `theerror` ([`b19ab24`](https://github.com/Byron/theerror/commit/b19ab24e0260684a13582e08978c94afeebb8917))
     - Release 1.0.48 ([`5c5f342`](https://github.com/Byron/theerror/commit/5c5f342a5e601e4bfb49c8c095cb57c9f14eb0c8))
     - Ignore manual_let_else pedantic clippy lint ([`1f5cbd7`](https://github.com/Byron/theerror/commit/1f5cbd701ed0977b0649f055549becd8181970c4))
