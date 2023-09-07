@@ -1,7 +1,7 @@
 use ref_cast::RefCast;
 use std::fmt::Display;
 use std::path::{Path, PathBuf};
-use thiserror::Error;
+use therror::Error;
 
 #[derive(Error, Debug)]
 #[error("failed to read '{file}'")]

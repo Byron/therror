@@ -1,4 +1,4 @@
-use thiserror::Error;
+use therror::Error;
 
 macro_rules! error_type {
     ($name:ident, $what:expr) => {

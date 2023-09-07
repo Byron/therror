@@ -5,7 +5,7 @@
 )]
 
 use std::fmt::Display;
-use thiserror::Error;
+use therror::Error;
 
 // Some of the elaborate cases from the rcc codebase, which is a C compiler in
 // Rust. https://github.com/jyn514/rcc/blob/0.8.0/src/data/error.rs

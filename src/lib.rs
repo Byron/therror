@@ -17,7 +17,7 @@
 //!
 //! ```rust
 //! # use std::io;
-//! use thiserror::Error;
+//! use therror::Error;
 //!
 //! #[derive(Error, Debug)]
 //! pub enum DataStoreError {
@@ -63,7 +63,7 @@
 //!
 //!   ```rust
 //!   # use std::i32;
-//!   # use thiserror::Error;
+//!   # use therror::Error;
 //!   #
 //!   #[derive(Error, Debug)]
 //!   pub enum Error {
@@ -77,7 +77,7 @@
 //!   as `.0`.
 //!
 //!   ```rust
-//!   # use thiserror::Error;
+//!   # use therror::Error;
 //!   #
 //!   # fn first_char(s: &String) -> char {
 //!   #     s.chars().next().unwrap()
@@ -130,7 +130,7 @@
 //!
 //!   ```rust
 //!   # use std::fmt::{self, Display};
-//!   # use thiserror::Error;
+//!   # use therror::Error;
 //!   #
 //!   #[derive(Error, Debug)]
 //!   pub struct MyError {
@@ -185,7 +185,7 @@
 //!   "anything else" variant.
 //!
 //!   ```
-//!   # use thiserror::Error;
+//!   # use therror::Error;
 //!   #
 //!   #[derive(Error, Debug)]
 //!   pub enum MyError {
@@ -203,7 +203,7 @@
 //!   able to evolve without breaking the crate's public API.
 //!
 //!   ```
-//!   # use thiserror::Error;
+//!   # use therror::Error;
 //!   #
 //!   // PublicError is public, but opaque and easy to keep compatible.
 //!   #[derive(Error, Debug)]
@@ -242,7 +242,7 @@ mod display;
 #[cfg(error_generic_member_access)]
 mod provide;
 
-pub use thiserror_impl::*;
+pub use therror_impl::*;
 
 // Not public API.
 #[doc(hidden)]

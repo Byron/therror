@@ -1,18 +1,18 @@
 [package]
-name = "thiserror"
+name = "therror"
 version = "1.0.48"
 authors = ["David Tolnay <dtolnay@gmail.com>"]
 categories = ["rust-patterns"]
-description = "derive(Error)"
-documentation = "https://docs.rs/thiserror"
+description = "derive(Error) with a twist (based on thiserror)"
+documentation = "https://docs.rs/therror"
 edition = "2021"
 keywords = ["error", "error-handling", "derive"]
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/dtolnay/thiserror"
+repository = "https://github.com/Byron/therror"
 rust-version = "1.56"
 
 [dependencies]
-thiserror-impl = { version = "=1.0.48", path = "impl" }
+therror-impl = { version = "=1.0.48", path = "impl" }
 
 [dev-dependencies]
 anyhow = "1.0.73"

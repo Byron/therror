@@ -3,7 +3,7 @@
 #[cfg(thiserror_nightly_testing)]
 pub mod structs {
     use std::backtrace::Backtrace;
-    use thiserror::Error;
+    use therror::Error;
 
     #[derive(Error, Debug)]
     #[error("...")]
@@ -48,7 +48,7 @@ pub mod structs {
 #[cfg(thiserror_nightly_testing)]
 pub mod enums {
     use std::backtrace::Backtrace;
-    use thiserror::Error;
+    use therror::Error;
 
     #[derive(Error, Debug)]
     pub enum OptSourceNoBacktrace {

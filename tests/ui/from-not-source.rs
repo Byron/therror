@@ -1,4 +1,4 @@
-use thiserror::Error;
+use therror::Error;
 
 #[derive(Debug, Error)]
 pub struct Error {

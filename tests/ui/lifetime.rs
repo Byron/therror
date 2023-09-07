@@ -1,5 +1,5 @@
 use std::fmt::Debug;
-use thiserror::Error;
+use therror::Error;
 
 #[derive(Error, Debug)]
 #[error("error")]

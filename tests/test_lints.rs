@@ -1,4 +1,4 @@
-use thiserror::Error;
+use therror::Error;
 
 pub use std::error::Error;
 

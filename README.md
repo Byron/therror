@@ -1,10 +1,10 @@
 derive(Error)
 =============
 
-[<img alt="github" src="https://img.shields.io/badge/github-dtolnay/thiserror-8da0cb?style=for-the-badge&labelColor=555555&logo=github" height="20">](https://github.com/dtolnay/thiserror)
-[<img alt="crates.io" src="https://img.shields.io/crates/v/thiserror.svg?style=for-the-badge&color=fc8d62&logo=rust" height="20">](https://crates.io/crates/thiserror)
-[<img alt="docs.rs" src="https://img.shields.io/badge/docs.rs-thiserror-66c2a5?style=for-the-badge&labelColor=555555&logo=docs.rs" height="20">](https://docs.rs/thiserror)
-[<img alt="build status" src="https://img.shields.io/github/actions/workflow/status/dtolnay/thiserror/ci.yml?branch=master&style=for-the-badge" height="20">](https://github.com/dtolnay/thiserror/actions?query=branch%3Amaster)
+[<img alt="github" src="https://img.shields.io/badge/github-byron/therror-8da0cb?style=for-the-badge&labelColor=555555&logo=github" height="20">](https://github.com/byron/therror)
+[<img alt="crates.io" src="https://img.shields.io/crates/v/therror.svg?style=for-the-badge&color=fc8d62&logo=rust" height="20">](https://crates.io/crates/therror)
+[<img alt="docs.rs" src="https://img.shields.io/badge/docs.rs-therror-66c2a5?style=for-the-badge&labelColor=555555&logo=docs.rs" height="20">](https://docs.rs/therror)
+[<img alt="build status" src="https://img.shields.io/github/actions/workflow/status/byron/therror/ci.yml?branch=main&style=for-the-badge" height="20">](https://github.com/byron/therror/actions?query=branch%3Amain)
 
 This library provides a convenient derive macro for the standard library's
 [`std::error::Error`] trait.
@@ -23,7 +23,7 @@ thiserror = "1.0"
 ## Example
 
 ```rust
-use thiserror::Error;
+use therror::Error;
 
 #[derive(Error, Debug)]
 pub enum DataStoreError {
@@ -196,7 +196,7 @@ pub enum DataStoreError {
 
 ## Comparison to anyhow
 
-Use thiserror if you care about designing your own dedicated error type(s) so
+Use `therror` if you care about designing your own dedicated error type(s) so
 that the caller receives exactly the information that you choose in the event of
 failure. This most often applies to library-like code. Use [Anyhow] if you don't
 care what error type your functions return, you just want it to be easy. This is
@@ -206,7 +206,13 @@ common in application-like code.
 
 <br>
 
-#### License
+
+## A fork of `thiserror`
+
+This fork was created with the idea of adding a killer-feature to `thiserror` which would definitely not make it into `thiserror` itself.
+We shall write more once it is more than an idea.
+
+## License
 
 <sup>
 Licensed under either of <a href="LICENSE-APACHE">Apache License, Version

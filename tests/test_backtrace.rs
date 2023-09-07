@@ -1,6 +1,6 @@
 #![cfg_attr(thiserror_nightly_testing, feature(error_generic_member_access))]
 
-use thiserror::Error;
+use therror::Error;
 
 #[derive(Error, Debug)]
 #[error("...")]
@@ -19,7 +19,7 @@ pub mod structs {
     use std::backtrace::Backtrace;
     use std::error::{self, Error};
     use std::sync::Arc;
-    use thiserror::Error;
+    use therror::Error;
 
     #[derive(Error, Debug)]
     #[error("...")]
@@ -153,7 +153,7 @@ pub mod enums {
     use std::backtrace::Backtrace;
     use std::error;
     use std::sync::Arc;
-    use thiserror::Error;
+    use therror::Error;
 
     #[derive(Error, Debug)]
     pub enum PlainBacktrace {
