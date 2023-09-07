@@ -22,7 +22,7 @@ Thanks to `dtolnay` for providing such a good base for further development.
 
 <csr-read-only-do-not-edit/>
 
- - 248 commits contributed to the release over the course of 1428 calendar days.
+ - 249 commits contributed to the release over the course of 1428 calendar days.
  - 1 commit was understood as [conventional](https://www.conventionalcommits.org).
  - 0 issues like '(#ID)' were seen in commit messages
 
@@ -33,6 +33,7 @@ Thanks to `dtolnay` for providing such a good base for further development.
 <details><summary>view details</summary>
 
  * **Uncategorized**
+    - Release therror-impl v0.0.48 ([`3a6cbc4`](https://github.com/Byron/theerror/commit/3a6cbc444c5c912c0e48a8d739beee4b3fc00281))
     - Add changelogs prior to release ([`dc9b3d6`](https://github.com/Byron/theerror/commit/dc9b3d669f4b5acfecffc2654afa0c0da689317c))
     - Rename `thiserror` to `theerror` ([`b19ab24`](https://github.com/Byron/theerror/commit/b19ab24e0260684a13582e08978c94afeebb8917))
     - Release 1.0.48 ([`5c5f342`](https://github.com/Byron/theerror/commit/5c5f342a5e601e4bfb49c8c095cb57c9f14eb0c8))
