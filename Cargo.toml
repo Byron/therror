@@ -1,6 +1,6 @@
 [package]
 name = "therror"
-version = "1.0.48"
+version = "0.0.48"
 authors = ["David Tolnay <dtolnay@gmail.com>"]
 categories = ["rust-patterns"]
 description = "derive(Error) with a twist (based on thiserror)"
@@ -12,7 +12,8 @@ repository = "https://github.com/Byron/therror"
 rust-version = "1.56"
 
 [dependencies]
-therror-impl = { version = "=1.0.48", path = "impl" }
+# NOTE: Requirement should be `=…`, not `^…`, but `cargo smart-release` can't handle that yet.
+therror-impl = { version = "^0.0.48", path = "impl" }
 
 [dev-dependencies]
 anyhow = "1.0.73"
