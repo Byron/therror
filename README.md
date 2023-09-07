@@ -212,6 +212,10 @@ common in application-like code.
 This fork was created with the idea of adding a killer-feature to `thiserror` which would definitely not make it into `thiserror` itself.
 We shall write more once it is more than an idea.
 
+The idea is to start out at `0.X.Y` where `X` is chosen to denote breaking changes, and `Y` is tracking the `thiserror` baseline while it matters.
+Once it becomes clear how `therror` differentiates itself, while retaining compatibility to `thiserror` for its baseline features, and once
+this differentiation becomes mature, we can continue increasing the major version to `2.0.0` and stand alone.
+
 ## License
 
 <sup>
