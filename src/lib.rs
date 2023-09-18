@@ -231,7 +231,8 @@
 //!
 //! # Nightly features
 //!
-//! Pass `--cfg theerror_error_generic_member_access` to enable nightly features error_generic_member_access
+//! Pass `--cfg theerror_error_generic_member_access` to enable nightly features
+//! `error_generic_member_access`
 
 #![doc(html_root_url = "https://docs.rs/thiserror/1.0.48")]
 #![allow(
