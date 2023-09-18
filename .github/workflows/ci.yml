@@ -69,7 +69,7 @@ jobs:
       - name: Generate lockfile
         run: cargo update
       - uses: Swatinem/rust-cache@v2
-      - run: cargo clippy --tests --workspace -- -Dclippy::all -Dclippy::pedantic
+      - run: cargo clippy --no-deps --tests --workspace -- -Dclippy::all -Dclippy::pedantic
 
   miri:
     name: Miri
