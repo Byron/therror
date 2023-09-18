@@ -27,14 +27,20 @@ jobs:
         with:
           toolchain: ${{matrix.rust}}
           components: rust-src
+      - name: Install nightly
+        if: matrix.rust == '1.56.0'
+        run: rustup toolchain install nightly --profile minimal --no-self-update
       - name: Generate lockfile
         if: matrix.rust != '1.56.0'
         run: cargo update
       - name: Generate lockfile
         if: matrix.rust == '1.56.0'
-        # `cargo +1.56 update` is extremely slow, so use `cargo +stable update`
+        # `cargo +1.56 update` is extremely slow, so use `cargo +nightly update`
         # instead which also uses sparse index by default.
-        run: cargo +stable update
+        #
+        # We also need to ensure it uses minimal version, since newer versions
+        # of dependencies might have higher MSRVs.
+        run: cargo +nightly generate-lockfile -Z minimal-versions
       - uses: Swatinem/rust-cache@v2
       - name: Enable type layout randomization
         run: echo RUSTFLAGS=${RUSTFLAGS}\ -Zrandomize-layout >> $GITHUB_ENV
