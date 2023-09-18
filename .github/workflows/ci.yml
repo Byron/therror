@@ -13,13 +13,8 @@ env:
   RUSTFLAGS: -Dwarnings
 
 jobs:
-  pre_ci:
-    uses: dtolnay/.github/.github/workflows/pre_ci.yml@master
-
   test:
     name: Rust ${{matrix.rust}}
-    needs: pre_ci
-    if: needs.pre_ci.outputs.continue
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -32,6 +27,21 @@ jobs:
         with:
           toolchain: ${{matrix.rust}}
           components: rust-src
+      - name: Install nightly
+        if: matrix.rust == '1.56.0'
+        run: rustup toolchain install nightly --profile minimal --no-self-update
+      - name: Generate lockfile
+        if: matrix.rust != '1.56.0'
+        run: cargo update
+      - name: Generate lockfile
+        if: matrix.rust == '1.56.0'
+        # `cargo +1.56 update` is extremely slow, so use `cargo +nightly update`
+        # instead which also uses sparse index by default.
+        #
+        # We also need to ensure it uses minimal version, since newer versions
+        # of dependencies might have higher MSRVs.
+        run: cargo +nightly generate-lockfile -Z minimal-versions
+      - uses: Swatinem/rust-cache@v2
       - name: Enable type layout randomization
         run: echo RUSTFLAGS=${RUSTFLAGS}\ -Zrandomize-layout >> $GITHUB_ENV
         if: matrix.rust == 'nightly'
@@ -42,37 +52,41 @@ jobs:
 
   minimal:
     name: Minimal versions
-    needs: pre_ci
-    if: needs.pre_ci.outputs.continue
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@nightly
       - run: cargo generate-lockfile -Z minimal-versions
+      - uses: Swatinem/rust-cache@v2
       - run: cargo check --locked
 
   clippy:
     name: Clippy
     runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request'
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@nightly
         with:
           components: clippy, rust-src
-      - run: cargo clippy --tests --workspace -- -Dclippy::all -Dclippy::pedantic
+      - name: Generate lockfile
+        run: cargo update
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo clippy --no-deps --tests --workspace -- -Dclippy::all -Dclippy::pedantic
 
   miri:
     name: Miri
-    needs: pre_ci
-    if: needs.pre_ci.outputs.continue
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@miri
+      - name: Generate lockfile
+        run: cargo update
+      - uses: Swatinem/rust-cache@v2
+        with:
+          cache-directories: "~/.cache/miri"
       - run: cargo miri setup
       - run: cargo miri test
         env:
@@ -81,7 +95,6 @@ jobs:
   outdated:
     name: Outdated
     runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request'
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
