@@ -28,7 +28,13 @@ jobs:
           toolchain: ${{matrix.rust}}
           components: rust-src
       - name: Generate lockfile
+        if: matrix.rust != '1.56.0'
         run: cargo update
+      - name: Generate lockfile
+        if: matrix.rust == '1.56.0'
+        # `cargo +1.56 update` is extremely slow, so use `cargo +stable update`
+        # instead which also uses sparse index by default.
+        run: cargo +stable update
       - uses: Swatinem/rust-cache@v2
       - name: Enable type layout randomization
         run: echo RUSTFLAGS=${RUSTFLAGS}\ -Zrandomize-layout >> $GITHUB_ENV
