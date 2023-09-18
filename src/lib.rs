@@ -227,6 +227,12 @@
 //!   in application code.
 //!
 //!   [`anyhow`]: https://github.com/dtolnay/anyhow
+//!
+//!
+//! # Nightly features
+//!
+//! Pass `--cfg theerror_error_generic_member_access` to enable nightly features
+//! `error_generic_member_access`
 
 #![doc(html_root_url = "https://docs.rs/thiserror/1.0.48")]
 #![allow(
@@ -235,11 +241,14 @@
     clippy::return_self_not_must_use,
     clippy::wildcard_imports
 )]
-#![cfg_attr(error_generic_member_access, feature(error_generic_member_access))]
+#![cfg_attr(
+    theerror_error_generic_member_access,
+    feature(error_generic_member_access)
+)]
 
 mod aserror;
 mod display;
-#[cfg(error_generic_member_access)]
+#[cfg(theerror_error_generic_member_access)]
 mod provide;
 
 pub use therror_impl::*;
@@ -251,7 +260,7 @@ pub mod __private {
     pub use crate::aserror::AsDynError;
     #[doc(hidden)]
     pub use crate::display::AsDisplay;
-    #[cfg(error_generic_member_access)]
+    #[cfg(theerror_error_generic_member_access)]
     #[doc(hidden)]
     pub use crate::provide::ThiserrorProvide;
 }
