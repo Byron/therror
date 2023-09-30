@@ -231,7 +231,7 @@
 //!
 //! # Nightly features
 //!
-//! Pass `--cfg theerror_error_generic_member_access` to enable nightly features
+//! Pass `--cfg therror_error_generic_member_access` to enable nightly features
 //! `error_generic_member_access`
 
 #![doc(html_root_url = "https://docs.rs/thiserror/1.0.48")]
@@ -242,13 +242,13 @@
     clippy::wildcard_imports
 )]
 #![cfg_attr(
-    theerror_error_generic_member_access,
+    therror_error_generic_member_access,
     feature(error_generic_member_access)
 )]
 
 mod aserror;
 mod display;
-#[cfg(theerror_error_generic_member_access)]
+#[cfg(therror_error_generic_member_access)]
 mod provide;
 
 pub use therror_impl::*;
@@ -260,7 +260,7 @@ pub mod __private {
     pub use crate::aserror::AsDynError;
     #[doc(hidden)]
     pub use crate::display::AsDisplay;
-    #[cfg(theerror_error_generic_member_access)]
+    #[cfg(therror_error_generic_member_access)]
     #[doc(hidden)]
     pub use crate::provide::ThiserrorProvide;
 }
