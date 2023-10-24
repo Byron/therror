@@ -1,4 +1,4 @@
-#![cfg_attr(thiserror_nightly_testing, feature(error_generic_member_access))]
+#![cfg_attr(therror_nightly_testing, feature(error_generic_member_access))]
 
 use therror::Error;
 
@@ -6,14 +6,14 @@ use therror::Error;
 #[error("...")]
 pub struct Inner;
 
-#[cfg(thiserror_nightly_testing)]
+#[cfg(therror_nightly_testing)]
 #[derive(Error, Debug)]
 #[error("...")]
 pub struct InnerBacktrace {
     backtrace: std::backtrace::Backtrace,
 }
 
-#[cfg(thiserror_nightly_testing)]
+#[cfg(therror_nightly_testing)]
 pub mod structs {
     use super::{Inner, InnerBacktrace};
     use std::backtrace::Backtrace;
@@ -147,7 +147,7 @@ pub mod structs {
     }
 }
 
-#[cfg(thiserror_nightly_testing)]
+#[cfg(therror_nightly_testing)]
 pub mod enums {
     use super::{Inner, InnerBacktrace};
     use std::backtrace::Backtrace;
@@ -270,5 +270,5 @@ pub mod enums {
 }
 
 #[test]
-#[cfg_attr(not(thiserror_nightly_testing), ignore)]
+#[cfg_attr(not(therror_nightly_testing), ignore)]
 fn test_backtrace() {}

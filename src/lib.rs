@@ -1,4 +1,4 @@
-//! [![github]](https://github.com/dtolnay/thiserror)&ensp;[![crates-io]](https://crates.io/crates/thiserror)&ensp;[![docs-rs]](https://docs.rs/thiserror)
+//! [![github]](https://github.com/dtolnay/therror)&ensp;[![crates-io]](https://crates.io/crates/therror)&ensp;[![docs-rs]](https://docs.rs/therror)
 //!
 //! [github]: https://img.shields.io/badge/github-8da0cb?style=for-the-badge&labelColor=555555&logo=github
 //! [crates-io]: https://img.shields.io/badge/crates.io-fc8d62?style=for-the-badge&labelColor=555555&logo=rust
@@ -41,7 +41,7 @@
 //!
 //! - Thiserror deliberately does not appear in your public API. You get the
 //!   same thing as if you had written an implementation of `std::error::Error`
-//!   by hand, and switching from handwritten impls to thiserror or vice versa
+//!   by hand, and switching from handwritten impls to therror or vice versa
 //!   is not a breaking change.
 //!
 //! - Errors may be enums, structs with named fields, tuple structs, or unit
@@ -234,7 +234,7 @@
 //! Pass `--cfg therror_error_generic_member_access` to enable nightly features
 //! `error_generic_member_access`
 
-#![doc(html_root_url = "https://docs.rs/thiserror/1.0.50")]
+#![doc(html_root_url = "https://docs.rs/therror/1.0.50")]
 #![allow(
     clippy::module_name_repetitions,
     clippy::needless_lifetimes,

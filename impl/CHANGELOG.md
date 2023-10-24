@@ -9,14 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <csr-id-5ae5b4e60e3f764615d89dca9e45db10be732f37/>
 
-The initial release which really is just a renamed fork of `thiserror`.
+The initial release which really is just a renamed fork of `therror`.
 Thanks to `dtolnay` for providing such a good base for further development.
 
 ### Other
 
  - <csr-id-5ae5b4e60e3f764615d89dca9e45db10be732f37/> avoid using `formatter`
    This can collide with enum variant field names. Namespace with a
-   `_thiserror_` prefix to avoid such collisions.
+   `_therror_` prefix to avoid such collisions.
 
 ### Commit Statistics
 
@@ -35,7 +35,7 @@ Thanks to `dtolnay` for providing such a good base for further development.
  * **Uncategorized**
     - Release therror-impl v0.0.48 ([`3a6cbc4`](https://github.com/Byron/theerror/commit/3a6cbc444c5c912c0e48a8d739beee4b3fc00281))
     - Add changelogs prior to release ([`dc9b3d6`](https://github.com/Byron/theerror/commit/dc9b3d669f4b5acfecffc2654afa0c0da689317c))
-    - Rename `thiserror` to `theerror` ([`b19ab24`](https://github.com/Byron/theerror/commit/b19ab24e0260684a13582e08978c94afeebb8917))
+    - Rename `therror` to `theerror` ([`b19ab24`](https://github.com/Byron/theerror/commit/b19ab24e0260684a13582e08978c94afeebb8917))
     - Release 1.0.48 ([`5c5f342`](https://github.com/Byron/theerror/commit/5c5f342a5e601e4bfb49c8c095cb57c9f14eb0c8))
     - Ignore manual_let_else pedantic clippy lint ([`1f5cbd7`](https://github.com/Byron/theerror/commit/1f5cbd701ed0977b0649f055549becd8181970c4))
     - AsDisplay is no longer an unused import ([`7566a29`](https://github.com/Byron/theerror/commit/7566a29b2aa5bad90ef190445bc094c2979b041a))
@@ -207,7 +207,7 @@ Thanks to `dtolnay` for providing such a good base for further development.
     - Release 1.0.5 ([`10b8e58`](https://github.com/Byron/theerror/commit/10b8e5817acdcd052f335c4ea9b6c8909eab76e7))
     - Merge pull request #39 from dtolnay/path ([`2e19391`](https://github.com/Byron/theerror/commit/2e1939158adac24a647fb9057327b5fc32b2964b))
     - Support interpolating paths as if they had a Display impl ([`72cb53e`](https://github.com/Byron/theerror/commit/72cb53e1c78ec544db9fd273f05093919ea0f111))
-    - Fill in missing fields of thiserror-impl unit test ([`e6762d9`](https://github.com/Byron/theerror/commit/e6762d9440aab9e1c387c02334f416b15042284d))
+    - Fill in missing fields of therror-impl unit test ([`e6762d9`](https://github.com/Byron/theerror/commit/e6762d9440aab9e1c387c02334f416b15042284d))
     - Release 1.0.4 ([`5079141`](https://github.com/Byron/theerror/commit/507914148ad4c69837ae42eb7930cb9e4f2fdc5b))
     - Merge pull request 36 from mathstuf:formatter-name-collision ([`12404e4`](https://github.com/Byron/theerror/commit/12404e42a5349aa027410e38d7e348f44c0ea91d))
     - Avoid using `formatter` ([`5ae5b4e`](https://github.com/Byron/theerror/commit/5ae5b4e60e3f764615d89dca9e45db10be732f37))
@@ -281,6 +281,6 @@ Thanks to `dtolnay` for providing such a good base for further development.
     - Add source() method for structs ([`f1dcfe0`](https://github.com/Byron/theerror/commit/f1dcfe0f0a557f49c59cb2c152f0836ee50ee6d7))
     - Implement derive for unit struct errors ([`1f02d8d`](https://github.com/Byron/theerror/commit/1f02d8d9fd74f807b0668927cc89dc614edb7555))
     - Begin derive macro implementation ([`c30d847`](https://github.com/Byron/theerror/commit/c30d847847273febb7894bc5cf134049ff4c0b06))
-    - Add thiserror-impl crate to be the proc macro ([`1987e62`](https://github.com/Byron/theerror/commit/1987e628fa9213ab9251cb928f170f0b0a4d431e))
+    - Add therror-impl crate to be the proc macro ([`1987e62`](https://github.com/Byron/theerror/commit/1987e628fa9213ab9251cb928f170f0b0a4d431e))
 </details>
 

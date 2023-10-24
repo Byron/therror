@@ -28,10 +28,10 @@ fn assert<T: Display>(expected: &str, value: T) {
 
 #[test]
 fn test_display() {
-    let path = Path::new("/thiserror");
+    let path = Path::new("/therror");
     let file = path.to_owned();
-    assert("failed to read '/thiserror'", StructPathBuf { file });
+    assert("failed to read '/therror'", StructPathBuf { file });
     let file = path.to_owned();
-    assert("failed to read '/thiserror'", EnumPathBuf::Read(file));
-    assert("failed to read '/thiserror'", StructPath::ref_cast(path));
+    assert("failed to read '/therror'", EnumPathBuf::Read(file));
+    assert("failed to read '/therror'", StructPath::ref_cast(path));
 }

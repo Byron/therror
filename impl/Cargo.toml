@@ -2,7 +2,7 @@
 name = "therror-impl"
 version = "0.0.50"
 authors = ["David Tolnay <dtolnay@gmail.com>"]
-description = "Implementation detail of the `therror` crate (based on thiserror)"
+description = "Implementation detail of the `therror` crate (based on therror)"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/Byron/therror"

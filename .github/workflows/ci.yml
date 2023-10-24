@@ -46,7 +46,7 @@ jobs:
         run: echo RUSTFLAGS=${RUSTFLAGS}\ -Zrandomize-layout >> $GITHUB_ENV
         if: matrix.rust == 'nightly'
       - name: Enable nightly-only tests
-        run: echo RUSTFLAGS=${RUSTFLAGS}\ --cfg=thiserror_nightly_testing --cfg=therror_error_generic_member_access >> $GITHUB_ENV
+        run: echo RUSTFLAGS=${RUSTFLAGS}\ --cfg=therror_nightly_testing --cfg=therror_error_generic_member_access >> $GITHUB_ENV
         if: matrix.rust == 'nightly'
       - run: cargo test --all
 

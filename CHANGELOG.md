@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 0.0.48 (2023-09-07)
 
-The initial release which really is just a renamed fork of `thiserror`.
+The initial release which really is just a renamed fork of `therror`.
 Thanks to `dtolnay` for providing such a good base for further development.
 
 ### Commit Statistics
@@ -26,7 +26,7 @@ Thanks to `dtolnay` for providing such a good base for further development.
 <details><summary>view details</summary>
 
  * **Uncategorized**
-    - Rename `thiserror` to `theerror` ([`b19ab24`](https://github.com/Byron/theerror/commit/b19ab24e0260684a13582e08978c94afeebb8917))
+    - Rename `therror` to `theerror` ([`b19ab24`](https://github.com/Byron/theerror/commit/b19ab24e0260684a13582e08978c94afeebb8917))
 </details>
 
 ## v1.0.48 (2023-09-02)
@@ -699,7 +699,7 @@ Thanks to `dtolnay` for providing such a good base for further development.
 
  - <csr-id-5ae5b4e60e3f764615d89dca9e45db10be732f37/> avoid using `formatter`
    This can collide with enum variant field names. Namespace with a
-   `_thiserror_` prefix to avoid such collisions.
+   `_therror_` prefix to avoid such collisions.
 
 ### Commit Statistics
 
@@ -803,6 +803,6 @@ Thanks to `dtolnay` for providing such a good base for further development.
     - Fix up doc tests to pass tests ([`bba1013`](https://github.com/Byron/theerror/commit/bba1013d3f35a022cfcfe011e23e0d2d5ce70775))
     - Copy readme to crate-level doc ([`a57ff45`](https://github.com/Byron/theerror/commit/a57ff450697cdf5f30bee24655193322d720de21))
     - Support any source() that derefs to std::error::Error ([`761ff1c`](https://github.com/Byron/theerror/commit/761ff1c7084124a0c5ec94409a7a6dde0ed30857))
-    - Add thiserror-impl crate to be the proc macro ([`1987e62`](https://github.com/Byron/theerror/commit/1987e628fa9213ab9251cb928f170f0b0a4d431e))
+    - Add therror-impl crate to be the proc macro ([`1987e62`](https://github.com/Byron/theerror/commit/1987e628fa9213ab9251cb928f170f0b0a4d431e))
 </details>
 

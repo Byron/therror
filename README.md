@@ -13,7 +13,7 @@ This library provides a convenient derive macro for the standard library's
 
 ```toml
 [dependencies]
-thiserror = "1.0"
+therror = "1.0"
 ```
 
 *Compiler support: requires rustc 1.56+*
@@ -47,7 +47,7 @@ pub enum DataStoreError {
 
 - Thiserror deliberately does not appear in your public API. You get the same
   thing as if you had written an implementation of `std::error::Error` by hand,
-  and switching from handwritten impls to thiserror or vice versa is not a
+  and switching from handwritten impls to therror or vice versa is not a
   breaking change.
 
 - Errors may be enums, structs with named fields, tuple structs, or unit
@@ -207,13 +207,13 @@ common in application-like code.
 <br>
 
 
-## A fork of `thiserror`
+## A fork of `therror`
 
-This fork was created with the idea of adding a killer-feature to `thiserror` which would definitely not make it into `thiserror` itself.
+This fork was created with the idea of adding a killer-feature to `therror` which would definitely not make it into `therror` itself.
 We shall write more once it is more than an idea.
 
-The idea is to start out at `0.X.Y` where `X` is chosen to denote breaking changes, and `Y` is tracking the `thiserror` baseline while it matters.
-Once it becomes clear how `therror` differentiates itself, while retaining compatibility to `thiserror` for its baseline features, and once
+The idea is to start out at `0.X.Y` where `X` is chosen to denote breaking changes, and `Y` is tracking the `therror` baseline while it matters.
+Once it becomes clear how `therror` differentiates itself, while retaining compatibility to `therror` for its baseline features, and once
 this differentiation becomes mature, we can continue increasing the major version to `2.0.0` and stand alone.
 
 ## License

@@ -69,12 +69,12 @@ fn impl_struct(input: Struct) -> TokenStream {
             let source_provide = if type_is_option(source_field.ty) {
                 quote_spanned! {source.member_span()=>
                     if let ::core::option::Option::Some(source) = &self.#source {
-                        source.thiserror_provide(#request);
+                        source.therror_provide(#request);
                     }
                 }
             } else {
                 quote_spanned! {source.member_span()=>
-                    self.#source.thiserror_provide(#request);
+                    self.#source.therror_provide(#request);
                 }
             };
             let self_provide = if source == backtrace {
@@ -258,12 +258,12 @@ fn impl_enum(input: Enum) -> TokenStream {
                     let source_provide = if type_is_option(source_field.ty) {
                         quote_spanned! {source.member_span()=>
                             if let ::core::option::Option::Some(source) = #varsource {
-                                source.thiserror_provide(#request);
+                                source.therror_provide(#request);
                             }
                         }
                     } else {
                         quote_spanned! {source.member_span()=>
-                            #varsource.thiserror_provide(#request);
+                            #varsource.therror_provide(#request);
                         }
                     };
                     let self_provide = if type_is_option(backtrace_field.ty) {
@@ -297,12 +297,12 @@ fn impl_enum(input: Enum) -> TokenStream {
                     let source_provide = if type_is_option(source_field.ty) {
                         quote_spanned! {backtrace.member_span()=>
                             if let ::core::option::Option::Some(source) = #varsource {
-                                source.thiserror_provide(#request);
+                                source.therror_provide(#request);
                             }
                         }
                     } else {
                         quote_spanned! {backtrace.member_span()=>
-                            #varsource.thiserror_provide(#request);
+                            #varsource.therror_provide(#request);
                         }
                     };
                     quote! {

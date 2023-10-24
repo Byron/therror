@@ -1,6 +1,6 @@
-#![cfg_attr(thiserror_nightly_testing, feature(error_generic_member_access))]
+#![cfg_attr(therror_nightly_testing, feature(error_generic_member_access))]
 
-#[cfg(thiserror_nightly_testing)]
+#[cfg(therror_nightly_testing)]
 pub mod structs {
     use std::backtrace::Backtrace;
     use therror::Error;
@@ -45,7 +45,7 @@ pub mod structs {
     }
 }
 
-#[cfg(thiserror_nightly_testing)]
+#[cfg(therror_nightly_testing)]
 pub mod enums {
     use std::backtrace::Backtrace;
     use therror::Error;
@@ -101,5 +101,5 @@ pub mod enums {
 }
 
 #[test]
-#[cfg_attr(not(thiserror_nightly_testing), ignore)]
+#[cfg_attr(not(therror_nightly_testing), ignore)]
 fn test_option() {}
