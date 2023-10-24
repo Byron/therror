@@ -234,7 +234,7 @@
 //! Pass `--cfg therror_error_generic_member_access` to enable nightly features
 //! `error_generic_member_access`
 
-#![doc(html_root_url = "https://docs.rs/thiserror/1.0.48")]
+#![doc(html_root_url = "https://docs.rs/thiserror/1.0.50")]
 #![allow(
     clippy::module_name_repetitions,
     clippy::needless_lifetimes,
