@@ -14,6 +14,7 @@ rust-version = "1.56"
 [dependencies]
 # NOTE: Requirement should be `=…`, not `^…`, but `cargo smart-release` can't handle that yet.
 therror-impl = { version = "^0.0.50", path = "impl" }
+therror-core = { version = "^0.0.1", path = "core" }
 
 [dev-dependencies]
 anyhow = "1.0.73"
@@ -22,7 +23,7 @@ rustversion = "1.0.13"
 trybuild = { version = "1.0.81", features = ["diff"] }
 
 [workspace]
-members = ["impl"]
+members = ["impl", "core"]
 
 [package.metadata.docs.rs]
 targets = ["x86_64-unknown-linux-gnu"]
