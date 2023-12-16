@@ -1,3 +1,5 @@
+#![allow(clippy::must_use_candidate)]
+
 use std::{error::Error, fmt};
 
 #[derive(Debug)]
@@ -7,6 +9,7 @@ pub struct TheError {
 }
 
 impl TheError {
+    #[must_use]
     pub fn new(error_identifier: Box<[&'static str]>, error: Box<dyn Error + Send + Sync>) -> Self {
         Self {
             error_identifier,
@@ -19,6 +22,7 @@ impl TheError {
     /// E.g., if `self.get_error_identifier()` returns `["A", "B"]` and this
     /// function is called with `layer_name` equals to `C`, then the new error
     /// would have `self.get_error_identifier()` equals to `["C", "A", "B"]`.
+    #[must_use]
     pub fn wrap(self, layer_name: &'static str) -> Self {
         let mut error_identifier = Vec::with_capacity(self.error_identifier.len() + 1);
         error_identifier.push(layer_name);
@@ -35,6 +39,10 @@ impl TheError {
     }
 
     /// Downcast to `T`.
+    ///
+    /// # Errors
+    ///
+    /// Return error if the error stored is not of type `T`
     pub fn downcast<T>(self) -> Result<T, Self>
     where
         T: Error + Send + Sync + 'static,
@@ -83,7 +91,7 @@ impl fmt::Display for TheError {
         for (i, ident) in self.error_identifier.iter().enumerate() {
             f.write_str(ident)?;
             if i < last_error_identifier_index {
-                f.write_str( "::")?;
+                f.write_str("::")?;
             }
         }
 
